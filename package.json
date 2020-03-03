@@ -2,15 +2,6 @@
   "name": "ytmusic",
   "version": "1.0.0",
   "description": "Youtube Music in an Electron wrapper",
-  "build": {
-    "appId": "com.ytmusic.app"
-  },
-  "main": "index.js",
-  "scripts": {
-    "start": "electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GDKeller/ytmusic.git"
@@ -21,10 +12,46 @@
     "url": "https://github.com/GDKeller/ytmusic/issues"
   },
   "homepage": "https://github.com/GDKeller/ytmusic#readme",
+  "build": {
+    "appId": "com.ytmusic.app",
+    "productName": "YouTube Music G",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "img/icon.ico"
+    }
+  },
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+
   "type": "module",
   "devDependencies": {
     "electron": "^8.0.2",
-    "electron-prebuilt-compile": "4.0.0"
+    "electron-builder": "^22.3.2"
   },
   "dependencies": {
     "@cliqz/adblocker-electron": "^1.9.2",
