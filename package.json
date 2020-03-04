@@ -38,7 +38,12 @@
     "win": {
       "target": "portable",
       "icon": "build/icon.ico"
-    }
+    },
+    "mac": {
+      "target": "default",
+      "category": "public.app-category.music",
+      "icon": "build/icon.icns"
+    },
   },
   "main": "index.js",
   "scripts": {
