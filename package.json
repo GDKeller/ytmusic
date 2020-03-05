@@ -6,15 +6,32 @@
     "type": "git",
     "url": "git+https://github.com/GDKeller/ytmusic.git"
   },
-  "author": "",
+  "author": "Grant Keller",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GDKeller/ytmusic/issues"
   },
   "homepage": "https://github.com/GDKeller/ytmusic#readme",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "type": "module",
+  "devDependencies": {
+    "electron": "^8.0.2",
+    "electron-builder": "^22.3.2"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.9.2",
+    "node-fetch": "^2.6.0"
+  },
   "build": {
     "appId": "com.ytmusic.app",
-    "productName": "YouTube Music G",
+    "productName": "YouTube Music",
+    "artifactName": "${productName}.${ext}",
     "dmg": {
       "contents": [
         {
@@ -43,22 +60,6 @@
       "target": "default",
       "category": "public.app-category.music",
       "icon": "build/icon.icns"
-    },
-  },
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "electron-builder install-app-deps",
-    "start": "electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
-  "type": "module",
-  "devDependencies": {
-    "electron": "^8.0.2",
-    "electron-builder": "^22.3.2"
-  },
-  "dependencies": {
-    "@cliqz/adblocker-electron": "^1.9.2",
-    "node-fetch": "^2.6.0"
+    }
   }
 }
