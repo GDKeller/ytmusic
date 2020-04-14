@@ -1,0 +1,65 @@
+{
+  "name": "ytmusic",
+  "version": "1.0.0",
+  "description": "Youtube Music in an Electron wrapper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GDKeller/ytmusic.git"
+  },
+  "author": "Grant Keller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GDKeller/ytmusic/issues"
+  },
+  "homepage": "https://github.com/GDKeller/ytmusic#readme",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "type": "module",
+  "devDependencies": {
+    "electron": "^8.0.2",
+    "electron-builder": "^22.3.2"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.9.2",
+    "node-fetch": "^2.6.0"
+  },
+  "build": {
+    "appId": "com.ytmusic.app",
+    "productName": "YouTube Music",
+    "artifactName": "${productName}.${ext}",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": "default",
+      "category": "public.app-category.music",
+      "icon": "build/icon.icns"
+    }
+  }
+}
