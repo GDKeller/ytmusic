@@ -1,9 +1,9 @@
 # YouTube Music for Desktop (w/ ad-blocker)
 The full YouTube Music website wrapped as a native desktop application, with an ad-blocker built in.
 
-:loud_sound:notes: Uninterruped music
+:loud_sound::notes: Uninterruped music
 
-:no_entry_sign::no_bell: No ads
+:no_good_man::no_bell: No ads
 
 &nbsp;
 &nbsp;
