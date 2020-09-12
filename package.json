@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@cliqz/adblocker-electron": "^1.9.2",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "build": {
     "appId": "com.ytmusic.app",
